@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.ermadmi78</groupId>
+        <artifactId>kobby-maven-example</artifactId>
+        <version>0.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>kobby-maven-example-cinema-api</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.ermadmi78</groupId>
+                <artifactId>kobby-maven-plugin</artifactId>
+                <version>${kobby.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate-kotlin</goal>
+                        </goals>
+                        <configuration>
+                            <kotlin>
+                                <scalars>
+                                    <Date>
+                                        <packageName>java.time</packageName>
+                                        <className>LocalDate</className>
+                                    </Date>
+                                    <JSON>
+                                        <packageName>kotlin.collections</packageName>
+                                        <className>Map</className>
+                                        <generics>
+                                            <generic>
+                                                <packageName>kotlin</packageName>
+                                                <className>String</className>
+                                            </generic>
+                                            <generic>
+                                                <packageName>kotlin</packageName>
+                                                <className>Any</className>
+                                                <nullable>true</nullable>
+                                            </generic>
+                                        </generics>
+                                    </JSON>
+                                </scalars>
+                            </kotlin>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!--Add this dependency to enable Jackson annotation generation in DTO classes by Kobby-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--Add this dependency to enable default Ktor adapters generation-->
+        <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-client-cio-jvm</artifactId>
+            <version>${ktor.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--Add this dependency to enable graphql-java-kickstart resolvers generation by Kobby-->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-java-tools</artifactId>
+            <version>${graphql.java.tools.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--Add this dependency to enable subscription resolver publisher generation-->
+        <dependency>
+            <groupId>org.reactivestreams</groupId>
+            <artifactId>reactive-streams</artifactId>
+            <version>${reactivestreams.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--Add this dependency to remove warning "Runtime JAR files in the classpath should have the same version"-->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk7</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.ermadmi78</groupId>
+    <artifactId>kobby-maven-example</artifactId>
+    <version>0.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>kobby-maven-example-cinema-api</module>
+        <module>kobby-maven-example-cinema-server</module>
+        <module>kobby-maven-example-cinema-kotlin-client</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <kobby.version>1.0.0-beta.10-SNAPSHOT</kobby.version>
+
+        <java.version>11</java.version>
+        <kotlin.version>1.5.20</kotlin.version>
+        <kotlinx.coroutines.version>1.5.0</kotlinx.coroutines.version>
+        <ktor.version>1.5.4</ktor.version>
+        <spring.boot.version>2.5.2</spring.boot.version>
+        <flywaydb.version>7.9.1</flywaydb.version>
+        <h2.version>1.4.200</h2.version>
+        <jooq.version>3.14.11</jooq.version>
+        <jackson.version>2.12.2</jackson.version>
+        <commons.lang3.version>3.12.0</commons.lang3.version>
+        <graphql.java.tools.version>11.0.1</graphql.java.tools.version>
+        <graphql.java.kickstart.version>11.1.0</graphql.java.kickstart.version>
+        <graphql.java.extended.scalars.version>16.0.1</graphql.java.extended.scalars.version>
+        <reactivestreams.version>1.0.3</reactivestreams.version>
+
+        <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+        <kotest.version>4.4.3</kotest.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-reflect</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-common</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <!--suppress DifferentKotlinMavenVersion -->
+                <version>${kotlin.version}</version>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                </dependencies>
+
+                <configuration>
+                    <compilerPlugins>
+                        <plugin>spring</plugin>
+                    </compilerPlugins>
+                    <jvmTarget>${java.version}</jvmTarget>
+                    <myIncremental>false</myIncremental>
+                    <args>
+                        <arg>-Xjsr305=strict</arg>
+                        <arg>-Xopt-in=kotlin.RequiresOptIn</arg>
+                    </args>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
