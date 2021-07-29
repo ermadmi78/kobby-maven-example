@@ -8,6 +8,8 @@
 1. See client source code [here](https://github.com/ermadmi78/kobby-maven-example/blob/main/kobby-maven-example-cinema-kotlin-client/src/main/kotlin/io/github/ermadmi78/kobby/cinema/kotlin/client/application.kt)
 1. Just try to write your own query by means of Kobby DSL!
 
+See Gradle example [here](https://github.com/ermadmi78/kobby-gradle-example)
+
 # Spring Security authorization support
 
 See example of GraphQL resolvers authorization [here](https://github.com/ermadmi78/kobby-maven-example/blob/main/kobby-maven-example-cinema-server/src/main/kotlin/io/github/ermadmi78/kobby/cinema/server/resolvers/QueryResolver.kt)
