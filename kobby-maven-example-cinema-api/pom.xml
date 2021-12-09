@@ -46,6 +46,10 @@
                                         </generics>
                                     </JSON>
                                 </scalars>
+                                <entity>
+                                    <contextInheritanceEnabled>false</contextInheritanceEnabled>
+                                    <contextFunEnabled>true</contextFunEnabled>
+                                </entity>
                             </kotlin>
                         </configuration>
                     </execution>

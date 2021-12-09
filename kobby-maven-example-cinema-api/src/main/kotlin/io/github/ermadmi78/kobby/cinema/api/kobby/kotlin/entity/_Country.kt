@@ -10,11 +10,12 @@ import io.github.ermadmi78.kobby.cinema.api.kobby.kotlin.dto.FilmInput
  * @author Dmitry Ermakov (ermadmi78@gmail.com)
  */
 
-suspend fun Country.refresh(__projection: (CountryProjection.() -> Unit)? = null): Country = query {
-    country(id) {
-        __projection?.invoke(this) ?: __withCurrentProjection()
-    }
-}.country!!
+suspend fun Country.refresh(__projection: (CountryProjection.() -> Unit)? = null): Country =
+    __context().query {
+        country(id) {
+            __projection?.invoke(this) ?: __withCurrentProjection()
+        }
+    }.country!!
 
 suspend fun Country.findFilm(id: Long, __projection: FilmProjection.() -> Unit = {}): Film? = refresh {
     __minimize() // switch off all default fields to minimize GraphQL response
@@ -22,7 +23,7 @@ suspend fun Country.findFilm(id: Long, __projection: FilmProjection.() -> Unit =
 }.film
 
 suspend fun Country.fetchFilm(id: Long, __projection: FilmProjection.() -> Unit = {}): Film =
-    findFilm(id, __projection)!!
+    __context().findFilm(id, __projection)!!
 
 suspend fun Country.findFilms(__query: CountryFilmsQuery.() -> Unit = {}): List<Film> = refresh {
     __minimize() // switch off all default fields to minimize GraphQL response
@@ -32,15 +33,15 @@ suspend fun Country.findFilms(__query: CountryFilmsQuery.() -> Unit = {}): List<
 //**********************************************************************************************************************
 
 suspend fun Country.createFilm(film: FilmInput, __query: MutationCreateFilmQuery.() -> Unit = {}): Film =
-    createFilm(id, film, __query)
+    __context().createFilm(id, film, __query)
 
 suspend fun Country.createActor(actor: ActorInput, __query: MutationCreateActorQuery.() -> Unit = {}): Actor =
-    createActor(id, actor, __query)
+    __context().createActor(id, actor, __query)
 
 //**********************************************************************************************************************
 
 fun Country.onFilmCreated(__projection: FilmProjection.() -> Unit = {}): CinemaSubscriber<Film> =
-    onFilmCreated(id, __projection)
+    __context().onFilmCreated(id, __projection)
 
 fun Country.onActorCreated(__projection: ActorProjection.() -> Unit = {}): CinemaSubscriber<Actor> =
-    onActorCreated(id, __projection)
+    __context().onActorCreated(id, __projection)
