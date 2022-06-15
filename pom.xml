@@ -20,17 +20,17 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <kobby.version>1.4.1</kobby.version>
+        <kobby.version>1.5.1</kobby.version>
 
         <java.version>11</java.version>
         <kotlin.version>1.5.21</kotlin.version>
         <kotlinx.coroutines.version>1.5.0</kotlinx.coroutines.version>
         <ktor.version>1.5.4</ktor.version>
-        <spring.boot.version>2.5.2</spring.boot.version>
+        <spring.boot.version>2.6.6</spring.boot.version>
         <flywaydb.version>7.9.1</flywaydb.version>
         <h2.version>1.4.200</h2.version>
         <jooq.version>3.14.11</jooq.version>
-        <jackson.version>2.12.2</jackson.version>
+        <jackson.version>2.13.2</jackson.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
         <graphql.java.tools.version>11.0.1</graphql.java.tools.version>
         <graphql.java.kickstart.version>11.1.0</graphql.java.kickstart.version>
@@ -45,6 +45,21 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk7</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-script-runtime</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
         <dependency>
