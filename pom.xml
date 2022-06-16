@@ -23,14 +23,14 @@
         <kobby.version>1.5.1</kobby.version>
 
         <java.version>11</java.version>
-        <kotlin.version>1.5.21</kotlin.version>
-        <kotlinx.coroutines.version>1.5.0</kotlinx.coroutines.version>
-        <ktor.version>1.5.4</ktor.version>
-        <spring.boot.version>2.6.6</spring.boot.version>
-        <flywaydb.version>7.9.1</flywaydb.version>
+        <kotlin.version>1.6.21</kotlin.version>
+        <kotlinx.coroutines.version>1.6.1</kotlinx.coroutines.version>
+        <ktor.version>1.6.8</ktor.version>
+        <spring.boot.version>2.6.8</spring.boot.version>
+        <flywaydb.version>8.5.11</flywaydb.version>
         <h2.version>1.4.200</h2.version>
         <jooq.version>3.14.11</jooq.version>
-        <jackson.version>2.13.2</jackson.version>
+        <jackson.version>2.13.3</jackson.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
         <graphql.java.tools.version>11.0.1</graphql.java.tools.version>
         <graphql.java.kickstart.version>11.1.0</graphql.java.kickstart.version>
@@ -113,7 +113,7 @@
                     <myIncremental>false</myIncremental>
                     <args>
                         <arg>-Xjsr305=strict</arg>
-                        <arg>-Xopt-in=kotlin.RequiresOptIn</arg>
+                        <arg>-opt-in=kotlin.RequiresOptIn</arg>
                     </args>
                 </configuration>
 
