@@ -32,9 +32,9 @@
         <jooq.version>3.14.11</jooq.version>
         <jackson.version>2.13.3</jackson.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
-        <graphql.java.tools.version>11.0.1</graphql.java.tools.version>
-        <graphql.java.kickstart.version>11.1.0</graphql.java.kickstart.version>
-        <graphql.java.extended.scalars.version>16.0.1</graphql.java.extended.scalars.version>
+        <graphql.java.tools.version>12.0.0</graphql.java.tools.version>
+        <graphql.java.kickstart.version>12.0.0</graphql.java.kickstart.version>
+        <graphql.java.extended.scalars.version>17.0</graphql.java.extended.scalars.version>
         <reactivestreams.version>1.0.3</reactivestreams.version>
 
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>

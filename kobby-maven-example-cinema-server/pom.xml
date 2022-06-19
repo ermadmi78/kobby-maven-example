@@ -20,27 +20,7 @@
 
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphql-kickstart-spring-boot-starter-webflux</artifactId>
-            <version>${graphql.java.kickstart.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphql-kickstart-spring-boot-starter-tools</artifactId>
-            <version>${graphql.java.kickstart.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphiql-spring-boot-starter</artifactId>
-            <version>${graphql.java.kickstart.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>playground-spring-boot-starter</artifactId>
-            <version>${graphql.java.kickstart.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>voyager-spring-boot-starter</artifactId>
+            <artifactId>graphql-spring-boot-starter</artifactId>
             <version>${graphql.java.kickstart.version}</version>
         </dependency>
 
