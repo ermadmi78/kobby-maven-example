@@ -29,21 +29,16 @@
                                     <Date>
                                         <packageName>java.time</packageName>
                                         <className>LocalDate</className>
+                                        <serializer>
+                                            <packageName>
+                                                io.github.ermadmi78.kobby.cinema.api.kobby.kotlin.dto
+                                            </packageName>
+                                            <className>LocalDateSerializer</className>
+                                        </serializer>
                                     </Date>
                                     <JSON>
-                                        <packageName>kotlin.collections</packageName>
-                                        <className>Map</className>
-                                        <generics>
-                                            <generic>
-                                                <packageName>kotlin</packageName>
-                                                <className>String</className>
-                                            </generic>
-                                            <generic>
-                                                <packageName>kotlin</packageName>
-                                                <className>Any</className>
-                                                <nullable>true</nullable>
-                                            </generic>
-                                        </generics>
+                                        <packageName>kotlinx.serialization.json</packageName>
+                                        <className>JsonObject</className>
                                     </JSON>
                                 </scalars>
                             </kotlin>
@@ -55,11 +50,11 @@
     </build>
 
     <dependencies>
-        <!--Add this dependency to enable Jackson annotation generation in DTO classes by Kobby-->
+        <!--Add this dependency to enable Kotlinx Serialization-->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson.version}</version>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-serialization-json</artifactId>
+            <version>${serialization.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -84,14 +79,6 @@
             <groupId>org.reactivestreams</groupId>
             <artifactId>reactive-streams</artifactId>
             <version>${reactivestreams.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!--Add this dependency to remove warning "Runtime JAR files in the classpath should have the same version"-->
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk7</artifactId>
-            <version>${kotlin.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
