@@ -70,29 +70,5 @@
             <version>${ktor.version}</version>
             <scope>compile</scope>
         </dependency>
-
-        <!--Add this dependency to enable graphql-java-kickstart resolvers generation by Kobby-->
-        <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphql-java-tools</artifactId>
-            <version>${graphql.java.tools.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!--Add this dependency to enable subscription resolver publisher generation-->
-        <dependency>
-            <groupId>org.reactivestreams</groupId>
-            <artifactId>reactive-streams</artifactId>
-            <version>${reactivestreams.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!--Add this dependency to remove warning "Runtime JAR files in the classpath should have the same version"-->
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk7</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
 </project>
