@@ -20,10 +20,10 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <kobby.version>4.0.0</kobby.version>
+        <kobby.version>4.0.1</kobby.version>
 
         <java.version>17</java.version>
-        <kotlin.version>1.9.23</kotlin.version>
+        <kotlin.version>1.9.24</kotlin.version>
         <kotlinx.coroutines.version>1.8.0</kotlinx.coroutines.version>
         <ktor.version>2.3.9</ktor.version>
         <spring.boot.version>3.2.4</spring.boot.version>
