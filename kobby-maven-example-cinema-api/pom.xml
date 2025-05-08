@@ -23,33 +23,33 @@
                         <goals>
                             <goal>generate-kotlin</goal>
                         </goals>
-                        <configuration>
-                            <kotlin>
-                                <scalars>
-                                    <Date>
-                                        <packageName>java.time</packageName>
-                                        <className>LocalDate</className>
-                                    </Date>
-                                    <JSON>
-                                        <packageName>kotlin.collections</packageName>
-                                        <className>Map</className>
-                                        <generics>
-                                            <generic>
-                                                <packageName>kotlin</packageName>
-                                                <className>String</className>
-                                            </generic>
-                                            <generic>
-                                                <packageName>kotlin</packageName>
-                                                <className>Any</className>
-                                                <nullable>true</nullable>
-                                            </generic>
-                                        </generics>
-                                    </JSON>
-                                </scalars>
-                            </kotlin>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <kotlin>
+                        <scalars>
+                            <Date>
+                                <packageName>java.time</packageName>
+                                <className>LocalDate</className>
+                            </Date>
+                            <JSON>
+                                <packageName>kotlin.collections</packageName>
+                                <className>Map</className>
+                                <generics>
+                                    <generic>
+                                        <packageName>kotlin</packageName>
+                                        <className>String</className>
+                                    </generic>
+                                    <generic>
+                                        <packageName>kotlin</packageName>
+                                        <className>Any</className>
+                                        <nullable>true</nullable>
+                                    </generic>
+                                </generics>
+                            </JSON>
+                        </scalars>
+                    </kotlin>
+                </configuration>
             </plugin>
         </plugins>
     </build>
