@@ -23,28 +23,26 @@
                         <goals>
                             <goal>generate-kotlin</goal>
                         </goals>
-                        <configuration>
-                            <kotlin>
-                                <scalars>
-                                    <Date>
-                                        <packageName>java.time</packageName>
-                                        <className>LocalDate</className>
-                                        <serializer>
-                                            <packageName>
-                                                io.github.ermadmi78.kobby.cinema.api.kobby.kotlin.dto
-                                            </packageName>
-                                            <className>LocalDateSerializer</className>
-                                        </serializer>
-                                    </Date>
-                                    <JSON>
-                                        <packageName>kotlinx.serialization.json</packageName>
-                                        <className>JsonObject</className>
-                                    </JSON>
-                                </scalars>
-                            </kotlin>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <kotlin>
+                        <scalars>
+                            <Date>
+                                <packageName>java.time</packageName>
+                                <className>LocalDate</className>
+                                <serializer>
+                                    <packageName>io.github.ermadmi78.kobby.cinema.api.kobby.kotlin.dto</packageName>
+                                    <className>LocalDateSerializer</className>
+                                </serializer>
+                            </Date>
+                            <JSON>
+                                <packageName>kotlinx.serialization.json</packageName>
+                                <className>JsonObject</className>
+                            </JSON>
+                        </scalars>
+                    </kotlin>
+                </configuration>
             </plugin>
         </plugins>
     </build>
