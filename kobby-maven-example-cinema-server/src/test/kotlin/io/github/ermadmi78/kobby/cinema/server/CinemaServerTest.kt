@@ -83,10 +83,10 @@ class CinemaServerTest : AnnotationSpec() {
                     value = "cool"
                 }
 
-                genre()
+                genre
                 country()
                 tags {
-                    value()
+                    value
                 }
             }
         }.createFilm
@@ -108,10 +108,10 @@ class CinemaServerTest : AnnotationSpec() {
                 birthday = LocalDate.of(1975, 3, 15)
                 gender = Gender.MALE
             }) {
-                gender()
+                gender
                 country()
                 tags {
-                    value()
+                    value
                 }
             }
         }.createActor
@@ -128,10 +128,10 @@ class CinemaServerTest : AnnotationSpec() {
 
         actor = context.mutation {
             updateBirthday(actor.id, LocalDate.of(1976, 4, 16)) {
-                gender()
+                gender
                 country()
                 tags {
-                    value()
+                    value
                 }
             }
         }.updateBirthday!!
@@ -166,19 +166,19 @@ class CinemaServerTest : AnnotationSpec() {
             country(country.id) {
                 films {
                     limit = -1
-                    genre()
+                    genre
                     country()
                     tags {
-                        value()
+                        value
                     }
 
                     // Actors of film
                     actors {
                         limit = -1
-                        gender()
+                        gender
                         country()
                         tags {
-                            value()
+                            value
                         }
                     }
                 }
@@ -229,10 +229,10 @@ class CinemaServerTest : AnnotationSpec() {
                 value = "cool"
             }
 
-            genre()
+            genre
             country()
             tags {
-                value()
+                value
             }
         }
 
@@ -252,10 +252,10 @@ class CinemaServerTest : AnnotationSpec() {
             birthday = LocalDate.of(1975, 3, 15)
             gender = Gender.MALE
         }) {
-            gender()
+            gender
             country()
             tags {
-                value()
+                value
             }
         }
 
@@ -290,19 +290,19 @@ class CinemaServerTest : AnnotationSpec() {
         val ussr = country.refresh {
             films {
                 limit = -1
-                genre()
+                genre
                 country()
                 tags {
-                    value()
+                    value
                 }
 
                 // Actors of film
                 actors {
                     limit = -1
-                    gender()
+                    gender
                     country()
                     tags {
-                        value()
+                        value
                     }
                 }
             }
@@ -358,7 +358,7 @@ class CinemaServerTest : AnnotationSpec() {
                 genre = Genre.COMEDY
                 offset = 2
                 limit = 2
-                genre()
+                genre
                 fields {
                     keys = listOf("title", "genre")
                 }
@@ -389,7 +389,7 @@ class CinemaServerTest : AnnotationSpec() {
                 gender = Gender.FEMALE
                 birthdayFrom = LocalDate.of(1967, 1, 1)
 
-                gender()
+                gender
             }
         }.actors
         actors.size shouldBe 2
@@ -415,18 +415,18 @@ class CinemaServerTest : AnnotationSpec() {
             country(19) {
                 films {
                     title = "d"
-                    genre()
+                    genre
                     actors {
-                        gender()
+                        gender
                         country()
                     }
                 }
                 actors {
                     limit = 2
-                    gender()
+                    gender
                     films {
                         genre = Genre.THRILLER
-                        genre()
+                        genre
                         country()
                     }
                 }
@@ -511,13 +511,13 @@ class CinemaServerTest : AnnotationSpec() {
         val list = context.query {
             taggable("julia") {
                 tags {
-                    value()
+                    value
                 }
                 __onFilm {
-                    genre()
+                    genre
                 }
                 __onActor {
-                    gender()
+                    gender
                 }
             }
         }.taggable
@@ -577,10 +577,10 @@ class CinemaServerTest : AnnotationSpec() {
                 __minimize()
                 native {
                     __onFilm {
-                        genre()
+                        genre
                     }
                     __onActor {
-                        gender()
+                        gender
                     }
                 }
             }
@@ -634,7 +634,7 @@ class CinemaServerTest : AnnotationSpec() {
         val list = context.query {
             taggable("julia") {
                 tags {
-                    value()
+                    value
                 }
             }
         }.taggable

@@ -48,6 +48,11 @@
                                 </generics>
                             </JSON>
                         </scalars>
+                        <entity>
+                            <projection>
+                                <enableNotationWithoutParentheses>true</enableNotationWithoutParentheses>
+                            </projection>
+                        </entity>
                     </kotlin>
                 </configuration>
             </plugin>
