@@ -20,16 +20,16 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <kobby.version>5.2.3</kobby.version>
+        <kobby.version>5.3.1</kobby.version>
 
         <java.version>17</java.version>
         <kotlin.version>1.9.25</kotlin.version>
         <kotlinx.coroutines.version>1.8.1</kotlinx.coroutines.version>
         <ktor.version>2.3.13</ktor.version>
-        <spring.boot.version>3.2.4</spring.boot.version>
-        <flywaydb.version>9.16.3</flywaydb.version>
+        <spring.boot.version>3.5.9</spring.boot.version>
+        <flywaydb.version>11.4.0</flywaydb.version>
         <h2.version>2.1.214</h2.version>
-        <jooq.version>3.18.13</jooq.version>
+        <jooq.version>3.19.29</jooq.version>
         <jackson.version>2.15.4</jackson.version>
         <commons.lang3.version>3.13.0</commons.lang3.version>
         <graphql.java.extended.scalars.version>17.0</graphql.java.extended.scalars.version>
